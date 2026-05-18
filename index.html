@@ -4,88 +4,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jess McArthur Portfolio</title>
+  <title>Jess McArthur</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="logo"><a href="index.html">Jess McArthur</a></div>
-    <ul class="nav-links">
-      <li><a href="projects.html">Projects</a></li>
-    </ul>
+  <nav>
+    <div class="nav-logo"><a href="index.html">JESSMCARTHUR</a></div>
+    <div class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </nav>
 
-  <div class="hero-heading">
-  <h1>
-    <span class="top-text text-fade-slide">JESS</span>
-    <span class="bottom-text text-fade-slide">MCARTHUR</span>
-  </h1>
-  <img src="images/jess-photo.JPG" alt="overlay image" class="heading-image" />
-</div>
+  <!-- HERO -->
+  <div class="bento" style="margin-bottom: var(--gap);">
 
-<section class="about">
-    <p>A little bit about me...</p>
-    <h2>A designer who combines my love for user-centred design and coding to create amazing digital experiences.</h2>
-  </section>
+    <div class="hero-text col-1">
+      <div>
+        <div class="hero-tag">Empathy-led designer</div>
+        <h1 class="hero-name">JESS<br>MCARTHUR</h1>
+        <p class="hero-sub">Creating work grounded in real human insights.</p>
+      </div>
+      <a href="#" class="btn">View my work <span class="btn-arrow">→</span></a>
+    </div>
 
-<div class="info-columns">
-  <section class="education">
-    <h3>Education</h3>
-    <ul>
-      <li>Media Design School <br /> Bachelor of Media Design <br />2024 - 2026</li>
-      <br>
-      <li>Craighead Diocesan School <br /> NCEA level 1, 2, 3 <br />2017 - 2023</li>
-    </ul>
-  </section>
+    <div class="hero-photo col-1">
+      <div class="photo-stack">
+        <div class="photo-card back"></div>
+        <div class="photo-card front">
 
-  <section class="experience">
-    <h3>Experience</h3>
-    <ul>
-      <li>Freelance Web Designer <br />Designed websites for small businesses and student portfolios <br />2024 -
-        Present</li>
-      <br />
-      <li>Retail worker<br /> Bunnings Warehouse <br /> Gained valuable customer service experience <br />2023 - Present
-      </li>
-    </ul>
-  </section>
+          <img src="images/profile.jpg" alt="Jess McArthur" />
+          <img src="images/profile2.jpeg" alt="Jess McArthur" />
+        </div>
+      </div>
+    </div>
 
-  <section class="bio">
-    <h3>Bio</h3>
-    <p>I’m currently finishing up my studies in UX/UI Design at Media Design School in Auckland. I first got into design
-      about five years ago, thanks to my high school technologies teacher who helped me realise I enjoy design and that I
-      should actually do something with it!</p>
-
-      <p>Since then, I’ve had some awesome opportunities to work with organisations like Auckland Transport and the Lions
-      Club NZ, which really helped me grow as a designer and understand the real-world impact of design.</p>
-
-      <p>Outside of design, you’ll usually find me at the beach or out walking, I love being outdoors.</p>
-  </section>
   </div>
 
-  <section class="stats">
-    <h3 class="fade-in">Get In Touch</h3>
-    <div class="stat fade-in">
-      <p>Email <br> <a href="mailto:jessmcarthur6@gmail.com">jessmcarthur6@gmail.com</a></p>
-    </div>
-    <div class="stat fade-in">
-      <p>LinkedIn <br> <a href="https://linkedin.com/in/jess-mcarthur-79a7a12aa" target="_blank">Jess McArthur</a></p>
-    </div>
-  </section>
+  <!-- TICKER -->
+  <div class="ticker col-2" style="margin-bottom: var(--gap);">
+    <span class="ticker-track">
+      Designing with empathy <span class="tdot">·</span>
+      Creating with intention <span class="tdot">·</span>
+      Designing with empathy <span class="tdot">·</span>
+      Creating with intention <span class="tdot">·</span>
+      Designing with empathy <span class="tdot">·</span>
+      Creating with intention <span class="tdot">·</span>
+    </span>
+  </div>
 
-  <footer class="footer">
-    <div class="footer-left">Jess McArthur</div>
-    <div class="footer-center">
-      <a href="mailto:jess@example.com">Email</a> |
-      <a href="https://linkedin.com/in/jessmcarthur" target="_blank">LinkedIn</a>
+  <!-- WORK HEADER -->
+  <div class="work-header" style="margin-bottom: 8px;">
+    <span class="work-title">Selected work</span>
+    <a href="work.html" class="view-all">View all →</a>
+  </div>
+
+  <!-- PROJECT CARDS -->
+  <div class="projects-grid" style="margin-bottom: var(--gap);">
+
+    <a href="metro.html" class="proj-card">
+      <div class="proj-img">
+        <img src="images/metro.png" alt="Metro Mission" />
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">Auckland Transport Game</div>
+        <div class="proj-name">Metro Mission</div>
+      </div>
+    </a>
+
+    <a href="biome.html" class="proj-card">
+      <div class="proj-img">
+        <img src="images/biome.png" alt="Biome" />
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">Native Plant Installation</div>
+        <div class="proj-name">Biome</div>
+      </div>
+    </a>
+
+    <a href="savr.html" class="proj-card">
+      <div class="proj-img">
+        <img src="images/savr.png" alt="Savr" />
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">Inventory Management</div>
+        <div class="proj-name">Savr</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- BOTTOM ROW -->
+  <div class="bottom-grid">
+
+    <div class="cta-box">
+      <div class="cta-text">Let's create<br>something together</div>
+      <a href="#" class="btn btn-outline">Get in touch <span class="btn-arrow">→</span></a>
     </div>
-    <div class="footer-right">2025</div>
-  </footer>
+
+    <div class="connect-box">
+      <div class="connect-label">Connect</div>
+      <a href="https://linkedin.com" target="_blank" class="connect-link">
+        LinkedIn <span class="arrow">↗</span>
+      </a>
+    </div>
+
+  </div>
+
 </body>
 
 </html>
