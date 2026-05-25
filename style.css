@@ -192,6 +192,7 @@ nav {
   width: 440px;
   height: 520px;
   transform: rotate(-2deg);
+  cursor: pointer;
 }
 
 .photo-card {
@@ -202,13 +203,23 @@ nav {
   height: 100%;
   border-radius: 8px;
   overflow: hidden;
+  transition: transform 0.5s ease, z-index 0s 0.25s;
 }
 
 .photo-card.back {
   transform: rotate(5deg) translate(12px, -8px);
-  background: var(--cream, #f5f5dc);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   z-index: 1;
+}
+
+.photo-card.back img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .photo-card.front {
@@ -226,9 +237,14 @@ nav {
   display: block;
 }
 
-.photo-card.front img:not(:first-child),
-.photo-card.front .photo-placeholder {
-  display: none;
+.photo-card.front.photo-card--behind {
+  z-index: 1;
+  transform: rotate(5deg) translate(12px, -8px);
+}
+
+.photo-card.back.photo-card--front {
+  z-index: 2;
+  transform: rotate(0deg) translate(0, 0);
 }
 
 /* ── TICKER ── */
