@@ -243,14 +243,19 @@ nav {
 }
 
 .ticker-track {
-  display: inline-block;
-  animation: ticker-scroll 20s linear infinite;
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 30s linear infinite;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--white);
-  padding-right: 40px;
+}
+
+.ticker-track span {
+  padding-right: 20px;
+  white-space: nowrap;
 }
 
 .ticker-track:hover {
@@ -258,7 +263,11 @@ nav {
 }
 
 .tdot {
-  margin: 0 22px;
+  margin-right: 50px;
+  margin-left: 70px;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 @keyframes ticker-scroll {
@@ -512,15 +521,21 @@ nav {
 
 .work-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 600px 600px;
   gap: var(--gap);
   margin-bottom: var(--gap);
 }
 
-.work-col-right {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
+/* Row 2: Biome (col 1, 2fr = wide) + Eloén (col 2, 1fr = narrow) */
+.work-grid>.work-card:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.work-grid>.work-card:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 /* ── BASE WORK CARD ── */
@@ -542,25 +557,12 @@ nav {
   box-shadow: 0 12px 36px rgba(26, 20, 16, 0.1);
 }
 
-/* ── LARGE CARD ── */
-.work-card--large {
-  height: 100%;
-}
-
-.work-card--large .work-card__img {
-  flex: 1;
-  min-height: 260px;
-}
-
-/* ── SMALL CARD (stacked pair in right column) ── */
-.work-card--small .work-card__img {
-  height: 180px;
-}
-
 /* ── IMAGE WRAPPER ── */
 .work-card__img {
   width: 100%;
+  flex: 1;
   overflow: hidden;
+  min-height: 0;
 }
 
 .work-card__img img {
@@ -569,6 +571,10 @@ nav {
   object-fit: cover;
   display: block;
   transition: transform 0.35s ease;
+}
+
+.work-card:hover .work-card__img img {
+  transform: scale(1.03);
 }
 
 /* ── IMAGE-ONLY CARD ── */
@@ -606,6 +612,7 @@ nav {
 /* ── CARD BODY ── */
 .work-card__body {
   padding: 16px 20px 20px;
+  flex-shrink: 0;
 }
 
 .work-card__cat {
@@ -625,39 +632,20 @@ nav {
 }
 
 /* ── STAGGERED ENTRY ANIMATIONS ── */
-.work-grid>.work-card:first-child {
+.work-grid>.work-card:nth-child(1) {
   animation-delay: 0.1s;
 }
 
-.work-col-right .work-card:nth-child(1) {
+.work-grid>.work-card:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-.work-col-right .work-card:nth-child(2) {
+.work-grid>.work-card:nth-child(3) {
   animation-delay: 0.3s;
 }
 
-.work-grid>.work-card:nth-child(3) {
-  animation-delay: 0.35s;
-}
-
 .work-grid>.work-card:nth-child(4) {
-  animation-delay: 0.45s;
-}
-
-/* ── WORK PAGE RESPONSIVE ── */
-@media (max-width: 680px) {
-  .work-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .work-card--large .work-card__img {
-    min-height: 200px;
-  }
-
-  .work-card--img-only .work-card__img--full {
-    min-height: 220px;
-  }
+  animation-delay: 0.4s;
 }
 
 /* =============================================
@@ -758,14 +746,13 @@ nav {
   font-size: 28px;
   font-weight: 400;
   color: var(--white);
-  line-height: 1.1;
 }
 
 .value-desc {
   font-size: 14px;
   color: rgba(249, 246, 240, 0.55);
-  font-weight: 300;
-  line-height: 1.4;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 /* ── FUN FACTS CARD ── */
@@ -814,8 +801,8 @@ nav {
 .fact-desc {
   font-size: 14px;
   color: var(--muted);
-  font-weight: 300;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 .fact-divider {
@@ -923,9 +910,9 @@ nav {
 }
 
 .contact-cta-sub {
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(249, 246, 240, 0.6);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.3;
 }
 
@@ -1056,8 +1043,8 @@ nav {
 .contact-footer-val {
   font-size: 14px;
   color: var(--white);
-  font-weight: 300;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 .contact-footer-link {
@@ -1133,62 +1120,107 @@ nav {
    CASE STUDY PAGE
    ============================================= */
 
-/* ── HERO ── */
+.cs-section-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cs-section-label--light {
+  color: rgba(249, 246, 240, 0.5);
+}
+
+.cs-outcome-header.cs-card--red .cs-card-heading {
+  color: var(--white);
+}
+
+.cs-outcome-header.cs-card--red .cs-card-body {
+  color: rgba(249, 246, 240, 0.8);
+}
+
+.cs-outcome-header.cs-card--red .cs-section-label {
+  color: rgba(249, 246, 240, 0.55);
+}
+
+.cs-card-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.cs-card-body {
+  font-size: 16px;
+  line-height: 1.3;
+  color: rgba(26, 20, 16, 0.7);
+}
+
+.cs-card-body--light {
+  color: rgba(249, 246, 240, 0.7);
+}
+
+/* =============================================
+   CASE STUDY — HERO
+   ============================================= */
+
 .cs-hero {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: var(--gap);
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards 0.1s;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 0;
+  margin-bottom: var(--gap);
+  background: var(--white);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  height: 600px;
+  border: 1px solid rgba(26, 20, 16, 0.08);
 }
 
 .cs-hero-left {
-  background: var(--white);
-  border-radius: var(--radius-card);
-  padding: 32px 32px 36px;
+  padding: 36px 32px;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 12px;
 }
 
 .cs-tag {
   font-size: 12px;
-  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--red);
-  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .cs-title {
-  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-family: "Playfair Display", serif;
   font-size: 42px;
-  font-weight: 400;
-  line-height: 1.05;
-  color: var(--dark);
-  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--text);
 }
 
 .cs-subtitle {
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 300;
-  line-height: 1.6;
-  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: rgba(26, 20, 16, 0.65);
+  max-width: 280px;
 }
 
 .cs-badge {
   display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   background: var(--red);
   color: var(--white);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 30px;
+  border-radius: 100px;
+  padding: 5px 14px;
   width: fit-content;
-  margin-bottom: 28px;
 }
 
 .cs-role {
@@ -1197,290 +1229,414 @@ nav {
 
 .cs-role-label {
   font-size: 12px;
-  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
   margin-bottom: 8px;
 }
 
 .cs-role-list {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .cs-role-list li {
   font-size: 12px;
   font-weight: 400;
-  color: var(--dark);
-  line-height: 1.5;
+  background: rgba(26, 20, 16, 0.07);
+  border-radius: 100px;
+  padding: 4px 12px;
+  color: var(--text);
 }
 
 .cs-hero-right {
-  border-radius: var(--radius-card);
   overflow: hidden;
-  background: #151a2e;
-  min-height: 320px;
+  background: #12111e;
 }
 
 .cs-hero-right img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* ── TWO COLUMN: BRIEF + PROBLEM ── */
+/* =============================================
+   CASE STUDY — BRIEF + PROBLEM
+   ============================================= */
+
 .cs-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--gap);
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards 0.2s;
+  margin-bottom: var(--gap);
+  min-height: 280px;
 }
 
-/* ── BASE CARD ── */
 .cs-card {
   border-radius: var(--radius-card);
-  padding: 32px 32px 36px;
+  padding: 32px;
+}
+
+.cs-card-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.cs-card-body {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
 }
 
 .cs-card--light {
-  background: var(--white);
+  background: var(--dark);
+  border: 1px solid rgba(26, 20, 16, 0.08);
 }
 
 .cs-card--red {
   background: var(--red);
 }
 
+.cs-card .cs-section-label {
+  color: rgba(249, 246, 240, 0.55);
+}
+
+.cs-card .cs-card-heading {
+  color: var(--white);
+}
+
+.cs-card .cs-card-body {
+  color: rgba(249, 246, 240, 0.8);
+}
+
 .cs-section-label {
   font-size: 12px;
-  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 12px;
-}
-
-.cs-section-label--light {
-  color: rgba(249, 246, 240, 0.5);
-}
-
-.cs-card-heading {
-  font-family: 'Cormorant Garamond', 'Georgia', serif;
-  font-size: 30px;
+  margin-bottom: 8px;
   font-weight: 400;
-  line-height: 1.1;
-  color: var(--dark);
-  margin-bottom: 14px;
 }
 
-.cs-card-heading--light {
-  color: var(--white);
-}
+/* =============================================
+   CASE STUDY — PROCESS SECTION
+   ============================================= */
 
-.cs-card-body {
-  font-size: 13px;
-  color: var(--muted);
-  font-weight: 300;
-  line-height: 1.75;
-}
-
-.cs-card-body--light {
-  color: rgba(249, 246, 240, 0.65);
-}
-
-/* Red card text overrides */
-.cs-card--red .cs-section-label {
-  color: rgba(249, 246, 240, 0.6);
-}
-
-.cs-card--red .cs-card-heading {
-  color: var(--white);
-}
-
-.cs-card--red .cs-card-body {
-  color: rgba(249, 246, 240, 0.75);
-}
-
-/* ── PROCESS ── */
-.cs-process {
-  background: var(--dark);
-  border-radius: var(--radius-card);
-  padding: 36px 36px 32px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards 0.25s;
-}
-
-.cs-process-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.cs-process-caption {
-  font-size: 10px;
-  color: rgba(249, 246, 240, 0.3);
-  font-style: italic;
-  margin-top: 20px;
-  letter-spacing: 0.03em;
-}
-
-.cs-process-right {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.cs-process-img {
-  width: 100%;
-  border-radius: 14px;
-  object-fit: cover;
-  max-height: 200px;
-  display: block;
-}
-
-.cs-process-screens {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 8px;
-}
-
-.cs-process-screens img {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  aspect-ratio: 4/3;
-  background: #2a2a2a;
-  display: block;
-}
-
-/* ── OUTCOME ── */
-.cs-outcome {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--gap);
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards 0.3s;
-}
-
-.cs-outcome-text {
+.cs-process-section {
   background: var(--white);
   border-radius: var(--radius-card);
-  padding: 32px 32px 36px;
+  padding: 40px 36px;
+  margin-bottom: var(--gap);
   display: flex;
   flex-direction: column;
+  gap: 48px;
 }
 
-.cs-outcome-images {
+.cs-process-header .cs-card-heading--light {
+  font-size: 32px;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.cs-process-step {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.cs-process-step--pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.cs-process-pair-item {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
   gap: 10px;
-  margin-top: 24px;
 }
 
-.cs-outcome-images img {
-  width: 100%;
-  border-radius: 14px;
-  object-fit: cover;
-  aspect-ratio: 4/3;
-  display: block;
-  background: var(--cream);
+.cs-process-pair-item .cs-step-img-placeholder {
+  align-self: end;
 }
 
-.cs-outcome-hero {
-  border-radius: var(--radius-card);
+.cs-process-section .cs-step-img-placeholder,
+.cs-process-section .cs-step-img--survey-wrap,
+.cs-process-section .cs-step-img--research-wrap {
+  border-radius: 16px;
+}
+
+.cs-step-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-step-right {
+  overflow: visible;
+}
+
+.cs-step-num {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--dark);
+}
+
+.cs-step-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.3;
+}
+
+.cs-step-body {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.cs-step-img-placeholder {
+  border-radius: 16px;
   overflow: hidden;
+  background: rgba(249, 246, 240, 0.05);
+  width: 100%;
 }
 
-.cs-outcome-hero video {
+.cs-process-step--research {
+  align-items: start;
+}
+
+.cs-step-img--survey-wrap {
+  height: 350px;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.cs-step-img--research-wrap {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-left: auto;
+}
+
+.cs-step-img--survey-wrap img,
+.cs-step-img--research-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  min-height: 100px;
-  border-radius: var(--radius-card);
 }
 
-/* ── BOTTOM NAVIGATION ── */
-.cs-nav-bottom {
-  background: var(--dark);
+.cs-step-img--hifi-wrap {
+  height: 530px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-left: auto;
+}
+
+.cs-step-img--hifi-wrap img {
+  width: 100%;
+  height: 530px;
+  object-fit: cover;
+  display: block;
+}
+
+.cs-step-img-placeholder:not(.cs-step-img--research) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cs-step-img--audience {
+  height: 470px;
+}
+
+.cs-step-img--flow {
+  height: 470px;
+}
+
+.cs-step-img--wireframes {
+  margin-top: 16px;
+  height: 400px;
+  width: 100%;
+}
+
+.cs-step-img--feedback {
+  height: 300px;
+}
+
+.cs-step-img--refinement {
+  height: 200px;
+}
+
+/* =============================================
+   CASE STUDY — OUTCOME
+   ============================================= */
+
+.cs-outcome-images-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+.cs-outcome-img--app1 {
+  grid-column: span 2;
+  height: 680px;
+}
+
+.cs-outcome-img--app2 {
+  grid-column: span 2;
+  height: 680px;
+}
+
+.cs-outcome-img--video {
+  height: 680px;
+  width: 400px;
+}
+
+.cs-outcome-img--poster {
+  height: 680px;
+  width: 990px;
+}
+
+.cs-outcome-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+.cs-outcome-header {
   border-radius: var(--radius-card);
-  padding: 24px 36px;
+  padding: 36px;
+}
+
+.cs-outcome-header .cs-card-heading {
+  margin-bottom: 8px;
+}
+
+.cs-outcome-img {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: rgba(26, 20, 16, 0.06);
+}
+
+.cs-outcome-img img,
+.cs-outcome-img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =============================================
+   CASE STUDY — BOTTOM NAV
+   ============================================= */
+
+.cs-nav-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards 0.35s;
+  background: var(--dark);
+  border: 1px solid rgba(26, 20, 16, 0.08);
+  border-radius: var(--radius-card);
+  padding: 24px 32px;
+  margin-bottom: var(--gap);
 }
 
 .cs-nav-link {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(249, 246, 240, 0.75);
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: opacity 0.2s ease;
 }
 
 .cs-nav-link:hover {
-  color: var(--white);
+  opacity: 0.7;
 }
 
 .cs-nav-arrow {
-  font-size: 18px;
-  color: rgba(249, 246, 240, 0.4);
+  font-size: 20px;
 }
 
-/* ── CASE STUDY RESPONSIVE ── */
-@media (max-width: 780px) {
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 768px) {
   .cs-hero {
     grid-template-columns: 1fr;
   }
 
   .cs-hero-right {
-    min-height: 220px;
+    height: 240px;
   }
 
   .cs-two-col {
     grid-template-columns: 1fr;
   }
 
-  .cs-process {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 28px;
+  .cs-process-section {
+    padding: 28px 20px;
+    gap: 36px;
   }
 
-  .cs-outcome {
+  .cs-process-step {
     grid-template-columns: 1fr;
   }
 
-  .cs-outcome-hero img {
-    min-height: 220px;
+  .cs-process-step--pair {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-outcome-images-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .cs-outcome-img {
+    height: 220px;
   }
 }
 
-@media (max-width: 480px) {
-  .cs-title {
-    font-size: 34px;
+@media (max-width: 680px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 
-  .cs-process-screens {
-    grid-template-columns: 1fr 1fr;
+  .work-grid>.work-card:nth-child(3),
+  .work-grid>.work-card:nth-child(4) {
+    grid-column: 1;
+    grid-row: auto;
   }
 
-  .cs-outcome-images {
+  .work-card__img {
+    height: 220px;
+    flex: none;
+  }
+
+  .bottom-grid {
     grid-template-columns: 1fr;
   }
 
-  .cs-nav-bottom {
-    padding: 20px 24px;
+  .cta-text {
+    font-size: 24px;
   }
 }
