@@ -1323,14 +1323,14 @@ nav {
 .cs-process-step {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 60px;
   align-items: start;
 }
 
 .cs-process-step--pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 60px;
   align-items: stretch;
 }
 
@@ -1434,10 +1434,18 @@ nav {
   height: 300px;
   overflow: hidden;
   border-radius: 16px;
+  margin-top: 24px;
 }
 
 .cs-step-img--refinement {
   height: 200px;
+}
+
+.cs-process-pair-item .cs-step-img--audience,
+.cs-process-pair-item .cs-step-img--flow {
+  align-self: end;
+  margin-top: auto;
+  margin-top: 24px;
 }
 
 /* =============================================
@@ -1468,7 +1476,6 @@ nav {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
-  margin-bottom: var(--gap);
 }
 
 .cs-outcome-header {
@@ -1503,10 +1510,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   background: var(--dark);
-
   border-radius: var(--radius-card);
   padding: 24px 32px;
-  margin-bottom: var(--gap);
 }
 
 .cs-nav-link {
