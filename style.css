@@ -1139,19 +1139,6 @@ nav {
    CASE STUDY PAGE
    ============================================= */
 
-.cs-section-label {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--off-white);
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.cs-section-label--light {
-  color: rgba(249, 246, 240, 0.5);
-}
-
 .cs-outcome-header.cs-card--red .cs-card-heading {
   color: var(--white);
 }
@@ -1162,10 +1149,6 @@ nav {
 
 .cs-outcome-header.cs-card--red .cs-section-label {
   color: rgba(249, 246, 240, 0.55);
-}
-
-.cs-card-body--light {
-  color: rgba(249, 246, 240, 0.7);
 }
 
 /* =============================================
@@ -1180,7 +1163,7 @@ nav {
   background: var(--white);
   border-radius: var(--radius-card);
   overflow: hidden;
-  height: 600px;
+  height: 570px;
   border: 1px solid rgba(26, 20, 16, 0.08);
 }
 
@@ -1323,6 +1306,7 @@ nav {
   text-transform: uppercase;
   margin-bottom: 8px;
   font-weight: 400;
+  color: var(--muted);
 }
 
 /* =============================================
@@ -1337,12 +1321,6 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 110px;
-}
-
-.cs-process-header .cs-card-heading--light {
-  font-size: 32px;
-  margin-bottom: 0;
-  font-weight: 400;
 }
 
 .cs-process-step {
@@ -1365,14 +1343,8 @@ nav {
   gap: 10px;
 }
 
-.cs-process-pair-item .cs-step-img-placeholder {
+.cs-process-pair-item img {
   align-self: end;
-}
-
-.cs-process-section .cs-step-img-placeholder,
-.cs-process-section .cs-step-img--survey-wrap,
-.cs-process-section .cs-step-img--research-wrap {
-  border-radius: 16px;
 }
 
 .cs-step-left {
@@ -1407,17 +1379,6 @@ nav {
   color: var(--dark);
 }
 
-.cs-step-img-placeholder {
-  border-radius: 16px;
-  overflow: hidden;
-  background: rgba(249, 246, 240, 0.05);
-  width: 100%;
-}
-
-.cs-process-step--research {
-  align-items: start;
-}
-
 .cs-step-img--survey-wrap {
   height: 350px;
   margin-top: 16px;
@@ -1430,11 +1391,15 @@ nav {
   width: 100%;
   overflow: hidden;
   border-radius: 16px;
-  margin-left: auto;
 }
 
 .cs-step-img--survey-wrap img,
-.cs-step-img--research-wrap img {
+.cs-step-img--research-wrap img,
+.cs-step-img--hifi-wrap img,
+.cs-step-img--audience img,
+.cs-step-img--flow img,
+.cs-step-img--wireframes img,
+.cs-step-img--feedback img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1446,39 +1411,32 @@ nav {
   width: 100%;
   overflow: hidden;
   border-radius: 16px;
-  margin-left: auto;
-}
-
-.cs-step-img--hifi-wrap img {
-  width: 100%;
-  height: 530px;
-  object-fit: cover;
-  display: block;
-}
-
-.cs-step-img-placeholder:not(.cs-step-img--research) img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .cs-step-img--audience {
   height: 470px;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .cs-step-img--flow {
   height: 470px;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .cs-step-img--wireframes {
   margin-top: 16px;
   height: 400px;
   width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .cs-step-img--feedback {
   height: 300px;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .cs-step-img--refinement {
@@ -1493,29 +1451,20 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--gap);
-  overflow: hidden;
 }
 
-.cs-outcome-img--app1 {
-  grid-column: span 2;
-  height: 680px;
-  width: 100%;
+.cs-outcome-images-grid--vp {
+  grid-template-columns: 400px 1fr;
 }
 
+.cs-outcome-img--app1,
 .cs-outcome-img--app2 {
   grid-column: span 2;
-  height: 680px;
-  width: 100%;
+  height: 670px;
 }
 
 .cs-outcome-img--video {
-  height: 680px;
-  width: 400px;
-}
-
-.cs-outcome-img--poster {
-  height: 680px;
-  width: 990px;
+  height: 670px;
 }
 
 .cs-outcome-section {
@@ -1544,8 +1493,8 @@ nav {
 .cs-outcome-img video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
 /* =============================================
@@ -1557,7 +1506,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   background: var(--dark);
-  border: 1px solid rgba(26, 20, 16, 0.08);
   border-radius: var(--radius-card);
   padding: 24px 32px;
   margin-bottom: var(--gap);
