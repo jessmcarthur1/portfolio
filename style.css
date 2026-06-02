@@ -1390,52 +1390,59 @@ nav {
 }
 
 .cs-step-img--survey-wrap {
-  height: 220px;
+  height: 240px;
   overflow: hidden;
   border-radius: 16px;
   margin-top: 24px;
 }
 
 .cs-step-img--ideation {
-  height: 220px;
+  height: 240px;
   overflow: hidden;
   border-radius: 16px;
   margin-top: 24px;
 }
 
 .cs-step-img--audience {
-  height: 220px;
+  height: 240px;
   overflow: hidden;
   border-radius: 16px;
   margin-top: 24px;
 }
 
 .cs-step-img--flow {
-  height: 220px;
+  height: 240px;
   overflow: hidden;
   border-radius: 16px;
   margin-top: 24px;
 }
 
 .cs-step-img--wireframes {
-  height: 220px;
+  height: 240px;
   overflow: hidden;
   border-radius: 16px;
   margin-top: 24px;
 }
 
 .cs-step-img--feedback {
-  height: 220px;
+  height: 240px;
   overflow: hidden;
   border-radius: 16px;
   margin-top: 24px;
 }
 
 .cs-step-img--hifi-wrap {
-  height: 300px;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.cs-step-img--hifi-wrap img {
+  flex: 1;
+  min-width: 0;
+  width: 50%;
+  min-height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .cs-step-img--survey-wrap img,
@@ -1443,8 +1450,7 @@ nav {
 .cs-step-img--audience img,
 .cs-step-img--flow img,
 .cs-step-img--wireframes img,
-.cs-step-img--feedback img,
-.cs-step-img--hifi-wrap img {
+.cs-step-img--feedback img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1510,6 +1516,7 @@ nav {
    ============================================= */
 
 .cs-nav-bottom {
+  margin-top: var(--gap);
   display: flex;
   justify-content: space-between;
   align-items: center;
