@@ -1466,6 +1466,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--gap);
+  margin-bottom: var(--gap);
 }
 
 .cs-outcome-images-grid--vp {
@@ -1581,6 +1582,19 @@ nav {
 
   .cs-outcome-img {
     height: 220px;
+  }
+
+   .cs-process-card--full-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-step-img--hifi-wrap {
+    flex-direction: column;
+  }
+
+  .cs-step-img--hifi-wrap img {
+    width: 100%;
+    flex: none;
   }
 }
 

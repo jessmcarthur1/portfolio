@@ -4,64 +4,205 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - Jess McArthur</title>
+    <title>Metro Mission — Jess McArthur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link rel="preload" as="image" href="assets/metro-app1.webp" />
+    <link rel="preload" as="image" href="assets/metro-app2.webp" />
+    <link rel="preload" as="image" href="assets/metro-poster.webp" />
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="logo"><a href="index.html">Jess McArthur</a></div>
-        <ul class="nav-links">
-            <li><a href="projects.html">Projects</a></li>
-        </ul>
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo"><a href="index.html">JESSMCARTHUR</a></div>
+        <div class="nav-links">
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
 
-    <section class="project-heading">
-        <h1>Lily Bulbs</h1>
-        <h3>Rakaia Lions Club</h3>
-        <img src="images/lions.png" alt="Lily Bulbs" class="project-img" />
-    </section>
+    <!-- ── HERO ── -->
+    <div class="cs-hero">
+        <div class="cs-hero-left">
+            <div class="cs-tag">Case Study</div>
+            <h1 class="cs-title">Savr</h1>
+            <p class="cs-subtitle">An inventory management app for cafés to reduce food waste.</p>
+            <span class="cs-badge">Solo Project</span>
 
-    <div class="project-info-columns">
-        <section class="role">
-            <h3>Role</h3>
-            <ul>
-                <li>UX/UI Designer <br />Developer</li>
-            </ul>
-        </section>
-
-        <section class="contribution">
-            <h3>Contribution</h3>
-            <ul>
-                <li>UX Design
-                    <br />Website Development
-                    <br /> Campaign Collateral
-                </li>
-            </ul>
-        </section>
-
-        <section class="overview">
-            <h3>Project Overview</h3>
-            <p>The Rakaia Lions Club needed a better way to run their annual lily bulb fundraiser. For years, sales relied on paper flyers and manual orders, but this approach limited their reach, required a lot of administration, and made it harder to connect with a broader customer base. With more people shopping online, there was a clear opportunity to modernise the process and make purchasing more convenient, accessible, and engaging for the community.</p>
-
-            <p>The creation of a dedicated e-commerce website for lily bulb sales . The site was designed to be intuitive and easy to navigate, allowing customers to browse bulb varieties, see high-quality images, and place orders in just a few clicks. By replacing the old flyer system with an online platform, the fundraiser now reaches beyond the local area, helping the Lions Club connect with new audiences while simplifying the experience for existing supporters.</p>
-        </section>
-    </div>
-
-    <div class="project-images">
-        <img src="" alt="">
-        <img src="" alt="">
-    </div>
-
-    <footer class="footer">
-        <div class="footer-left">Jess McArthur</div>
-        <div class="footer-center">
-            <a href="mailto:jess@example.com">Email</a> |
-            <a href="https://linkedin.com/in/jessmcarthur" target="_blank">LinkedIn</a>
+            <div class="cs-role">
+                <div class="cs-role-label">My Roles</div>
+                <ul class="cs-role-list">
+                    <li>Branding</li>
+                    <li>User Research</li>
+                    <li>UX Design</li>
+                    <li>Prototyping</li>
+                    <li>App Development</li>
+                    <li>Graphic Design</li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-right">2025</div>
-    </footer>
+
+        <div class="cs-hero-right">
+            <img src="assets/savr.png" alt="Savr hero" />
+        </div>
+    </div>
+
+    <!-- ── BRIEF + PROBLEM ── -->
+    <div class="cs-two-col">
+        <div class="cs-card cs-card--light">
+            <div class="cs-section-label">Brief</div>
+            <h2 class="cs-card-heading">The Challenge</h2>
+            <p class="cs-card-body">To create a new social or commercial enterprise in Auckland. The goal is to use
+                design to address a real-world problem and positively impact social, cultural, or community well-being.
+                The project required developing an interactive product or service.</p>
+        </div>
+
+        <div class="cs-card cs-card--red">
+            <div class="cs-section-label">Problem</div>
+            <h2 class="cs-card-heading">The Issue</h2>
+            <p class="cs-card-body">Hospitality services such as cafés contribute significantly to food waste by
+                routinely discarding food that is unsold or nearing its expiry or best before date at the end of each
+                day. In many cases, prepared food is discarded at the end of the day even if it’s still safe to eat,
+                simply because it can’t be sold the next day due to food safety policies.</p>
+        </div>
+    </div>
+
+    <!-- ── OUTCOME ── -->
+    <div class="cs-outcome-section">
+        <div class="cs-outcome-header cs-card--red">
+            <div class="cs-section-label">Outcome</div>
+            <h2 class="cs-card-heading">The Result</h2>
+            <p class="cs-card-body">An inventory management app designed for cafés to reduce food waste by tracking stock, sending expiry alerts, and generating recipe ideas based on soon-to-expire ingredients.</p>
+        </div>
+
+        <div class="cs-outcome-images-grid">
+            <div class="cs-outcome-img cs-outcome-img--app1">
+                <img src="assets/savr2.png" alt="Gameplay screens" />
+            </div>
+            <div class="cs-outcome-img cs-outcome-img--app2">
+                <img src="assets/savr3.png" alt="Character choice" />
+            </div>
+        </div>
+
+        <div class="cs-outcome-images-grid cs-outcome-images-grid--vp">
+            <div class="cs-outcome-img cs-outcome-img--video">
+                <video src="assets/metro-video.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="cs-outcome-img cs-outcome-img--poster">
+                <img src="assets/savr-mag.png" alt="Poster mockup" />
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PROCESS ── -->
+    <div class="cs-process-section">
+        <div class="cs-process-header">
+            <div class="cs-section-label">Process</div>
+            <h2 class="cs-card-heading">How I Got There</h2>
+        </div>
+
+        <div class="cs-process-grid">
+
+            <div class="cs-process-card">
+                <div class="cs-step-num">01</div>
+                <h3 class="cs-step-title">Research &amp; Insights</h3>
+                <p class="cs-step-body">I looked into food waste in NZ, where the highest levels occur and who contributes most. While supermarkets are major contributors, I found they are already taking action through donations and waste-reduction apps.</p>
+                <div class="cs-step-img--survey-wrap">
+                    <img src="assets/savr-research.png" alt="Survey Insights" />
+                </div>
+                <div class="cs-step-callout">
+                    <div class="cs-step-callout-label">Key takeaway</div>
+                    <p>Of the 24,372 tonnes of food waste generated annually in NZ, 60% of it is avoidable.</p>
+                </div>
+            </div>
+
+            <div class="cs-process-card">
+                <div class="cs-step-num">02</div>
+                <h3 class="cs-step-title">Target Audience</h3>
+                <p class="cs-step-body">My research led me to focus on cafés and restaurant owners/managers within New Zealand as the next largest source of food waste.</p>
+                <div class="cs-step-img--audience">
+                    <img src="assets/savr-ta.png" alt="Target Audience" />
+                </div>
+                <div class="cs-step-callout">
+                    <div class="cs-step-callout-label">Why this audience?</div>
+                    <p>Strict food safety regulations prevent cafe's and restaurants from reusing perfectly edible ingredients.</p>
+                </div>
+            </div>
+
+            <div class="cs-process-card">
+                <div class="cs-step-num">03</div>
+                <h3 class="cs-step-title">Solution Ideation</h3>
+                <p class="cs-step-body">I explored existing solutions, finding that most food waste apps are international, with limited options tailored to the New Zealand context. In ideation, I explored concepts like discounted meals for students.</p>
+                <div class="cs-step-img--ideation">
+                    <img src="assets/savr-solution.png" alt="Solution Ideation" />
+                </div>
+                <div class="cs-step-callout">
+                    <div class="cs-step-callout-label">Why an app?</div>
+                    <p>Games make learning feel rewarding. Kids already spend time on phones/tablets.</p>
+                </div>
+            </div>
+
+            <div class="cs-process-card">
+                <div class="cs-step-num">04</div>
+                <h3 class="cs-step-title">Branding</h3>
+                <p class="cs-step-body">I created a brand identity that reflected the app's mission of reducing food waste while making it modern and engaging for users.</p>
+                <div class="cs-step-img--flow">
+                    <img src="assets/savr-brand.png" alt="Branding" />
+                </div>
+            </div>
+
+            <div class="cs-process-card">
+                <div class="cs-step-num">05</div>
+                <h3 class="cs-step-title">Prototyping</h3>
+                <p class="cs-step-body">I integrated my branding into the prototype to make sure each page was visually coheisive and refine the user interface.</p>
+                <div class="cs-step-img--wireframes">
+                    <img src="assets/savr-hi-fi.png" alt="Wireframes" />
+                </div>
+            </div>
+
+            <div class="cs-process-card">
+                <div class="cs-step-num">06</div>
+                <h3 class="cs-step-title">Feedback &amp; Refinement</h3>
+                <p class="cs-step-body">Feedback from testing and critiques suggested the need to strengthen the visual hierarchy and add more features.</p>
+                <div class="cs-step-img--feedback">
+                    <img src="assets/savr-feedback.png" alt="Feedback" />
+                </div>
+            </div>
+
+            <div class="cs-process-card cs-process-card--full">
+                <div class="cs-step-num">07</div>
+                <h3 class="cs-step-title">Development</h3>
+                <div class="cs-process-card--full-inner">
+                    <p class="cs-step-body">During development, I prioritised user experience, designing features that allow users to easily add, edit, and delete inventory items.</p>
+                    <div class="cs-step-img--hifi-wrap">
+                        <img src="assets/metro-hi-fi.png" alt="Hi-fi Prototype" />
+                        <img src="assets/metro-development.png" alt="Code Development" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ── BOTTOM NAV ── -->
+    <div class="cs-nav-bottom">
+        <a href="work.html" class="cs-nav-link">
+            <span class="cs-nav-arrow">←</span>
+            <span>Back to work</span>
+        </a>
+        <a href="savr.html" class="cs-nav-link">
+            <span>Next Project</span>
+            <span class="cs-nav-arrow">→</span>
+        </a>
+    </div>
+
 </body>
 
 </html>
