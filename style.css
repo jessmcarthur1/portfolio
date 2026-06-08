@@ -1184,6 +1184,7 @@ nav {
   font-size: 60px;
   font-weight: 700;
   color: var(--text);
+  line-height: 1.1;
 }
 
 .cs-subtitle {
@@ -1278,7 +1279,6 @@ nav {
 
 .cs-card--light {
   background: var(--dark);
-  border: 1px solid rgba(26, 20, 16, 0.08);
 }
 
 .cs-card--red {
