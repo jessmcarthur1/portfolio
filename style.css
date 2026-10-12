@@ -830,7 +830,7 @@ nav {
 
 .fact-photo-wrap {
     width: 100%;
-    height: clamp(160px, 18vw, 260px);
+    height: clamp(200px, 18vw, 280px);
     margin-bottom: 1rem;
     border-radius: 8px;
     overflow: hidden;
@@ -843,7 +843,7 @@ nav {
 
 .fact-photo {
     width: 100%;
-    height: auto;
+    height: 110%;
     object-fit: cover;
     display: block;
 }
